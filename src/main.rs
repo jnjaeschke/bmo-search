@@ -1145,8 +1145,16 @@ mod tests {
     #[test]
     fn format_flags_multiple() {
         let flags = vec![
-            Flag { name: "review".into(), status: "+".into(), requestee: None },
-            Flag { name: "needinfo".into(), status: "?".into(), requestee: None },
+            Flag {
+                name: "review".into(),
+                status: "+".into(),
+                requestee: None,
+            },
+            Flag {
+                name: "needinfo".into(),
+                status: "?".into(),
+                requestee: None,
+            },
         ];
         assert_eq!(format_flags(&flags), "review+, needinfo?");
     }
@@ -1158,11 +1166,14 @@ mod tests {
         let mut chart = ChartBuilder::new();
         chart.add("product", "equals", "Firefox");
         let params = chart.into_params();
-        assert_eq!(params, vec![
-            ("f0".into(), "product".into()),
-            ("o0".into(), "equals".into()),
-            ("v0".into(), "Firefox".into()),
-        ]);
+        assert_eq!(
+            params,
+            vec![
+                ("f0".into(), "product".into()),
+                ("o0".into(), "equals".into()),
+                ("v0".into(), "Firefox".into()),
+            ]
+        );
     }
 
     #[test]
