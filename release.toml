@@ -1,0 +1,6 @@
+[workspace]
+allow-branch = ["main"]
+sign-commit = true
+sign-tag = true
+push = true
+publish = false  # CI handles crates.io publish
